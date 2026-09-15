@@ -1,29 +1,22 @@
 "use strict";
-
-// 1
+// Завдання 1
 // Запропонуйте користувачу ввести число за допомогою prompt().
 // Збережіть введене значення у змінну number.
 // Перевірте, чи дорівнює змінна number числу 10:
 //    Якщо так – виведіть повідомлення 'Вірно' у alert().
 //    Якщо ні – виведіть 'Невірно'.
-
 // Підказка: prompt завжди повертає рядок (String), тому перед перевіркою
 // перетворіть значення на число за допомогою Number().
 
-// const number = Number(prompt("ввести число"));
-// console.log(number);
-
+// const number = Number(prompt(`Введіть число від 1 до 10`));
 // if (number === 10) {
-//     alert("Вірно");
+//     alert(`Вірно`);
 // }
 // else {
-//     alert("Невірно");
+//     alert('Невірно')
 // }
 
-// (number === 10) ? alert("Вірно") : alert("Невірно");
-// alert(number === 10 ? "Вірно" : "Невірно");
-
-//2
+// Завдання 2
 // У змінній min лежить випадкове число від 0 до 59.
 // Визначте, в яку чверть години потрапляє
 // це число (у першу, другу, третю чи четверту).
@@ -31,32 +24,20 @@
 // "10 входить в першу чверть"
 
 // const min = Math.floor(Math.random() * 59);
-// console.log(min);
-
-// if (min <= 15) {
-//     // alert(min + " Входить у першу чверть");
-//     alert(`${min} Входить у першу чверть`);
-
+// if (min <= 14) {
+//     alert(`${min} входить у першу чверть`);
 // }
-// else if (min <= 30) {
-//     // alert(min + " Входить у другу чверть");
-//     alert(`${min} Входить у другу чверть`);
-
+// else if (min <= 29 && min >= 15) {
+//     alert(`${min} входить у другу чверть`);
 // }
-    
-// else if (min <= 45) {
-//     // alert(min + " Входить у третю чверть");
-//     alert(`${min} Входить у третю чверть`);
-
+// else if (min <= 44 && min >= 30) {
+//     alert(`${min} входить у третю чверть`);
+// }
+// else if (min <= 59 && min >= 45) {
+//     alert(`${min} входить у четверту чверть`);
 // }
 
-// else {
-//     // alert(min + " Входить у четверту чверть");
-//     alert(`${min} Входить у четверту чверть`);
-
-// }
-
-// 3
+// Завдання 3
 // Змінна num може набувати 4 значення: '1', '2', '3' або '4'
 // (запитуй це значення у користувача через prompt).
 // Якщо вона має значення '1', то у змінну result запишіть 'зима',
@@ -67,45 +48,45 @@
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
 
-// const num = prompt("Введіть число від 1 до 4");
-// let result = "";
+// const num = Number(prompt(`1, 2, 3, 4`));
+// let result;
 // switch (num) {
-//     case "1":
-//         result = "Зима";
+//     case 1:
+//         result = `Зима`;
 //         break;
-//     case "2":
-//         result = "Весна";
+//     case 2:
+//         result = `Весна`;
 //         break;
-//     case "3":
-//         result = "Літо";
+//     case 3:
+//         result = `Літо`;
 //         break;
-//     case "4":
-//         result = "Осінь";
+//     case 4:
+//         result = `Осінь`;
 //         break;
 //     default:
-//         result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+//         result = `Вибачте, але ви маєте ввести значення від 1 до 4 включно`;
 // }
-// alert(result);
 // console.log(result);
 
-// 4
+
+
+// Завдання 4
 // Отримуйте від користувача число (кількість хвилин) через prompt
 // і виводьте у консоль рядок у форматі годин та хвилин.
 // Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
 // Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
 
-// const num = prompt("Введіть кількість хвилин");
-// let numb = Number(num);
-// let hours = Math.floor(numb / 60);
-// let minutes = Math.floor(numb % 60);
-// let afterHours = hours.toString().padStart(2, "0");
-// let afterMinutes = minutes.toString().padStart(2, "0");
-// let result = `${afterHours}:${afterMinutes}`;
-// console.log(result);
-// alert(result);
 
-// 5
+// const num = Number(prompt(`Введіть кількість хвилин`));
+// const hour = Math.floor(num / 60);
+// const minute = Math.floor(num % 60);
+// const totalHour = hour.toString().padStart(2, `0`);
+// const totalMinute = minute.toString().padStart(2, `0`);
+// console.log(totalHour + `:` + totalMinute);
+
+
+// Завдання 5
 // Напишіть код, який запитуватиме у користувача
 // логін за допомогою prompt і виводить результат в консоль браузера
 
@@ -121,38 +102,35 @@
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
-// let login = prompt("Введіть логін");
-
-// if (login === "Адмін") {
-//     // тут буде prompt для пароля
-// } else if (login === null || login === "") {
-//     alert("Скасовано");
-// } else {
-//     alert("Я вас не знаю");
+// const login = prompt('Введіть логін')
+// if (login === null || login === "") {
+//     alert(`Скасовано`)
 // }
-// let password = prompt("Введіть пароль");
-// if (password == "Я головний") {
-//     alert("Добрий день!");
+// else if (login === "Адмін") {
+//     const password = prompt(`Введіть пароль`);
+//     if (password === "Я головний") {
+//     alert("Добрий день!")
+//     }
+//     else {
+//         alert("Невірний пароль!")
+//     }
 // }
 // else {
-//     alert("Невірний пароль!")
+//     alert(`Я вас не знаю`)
 // }
 
 
-
-
-
-// 6
+// Завдання 6
 // Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
 
 // let i = 0;
-
 // while (i <= 20) {
-//   console.log(i);
-//   i++;
+//     console.log(i);
+//    i = i + 1
 // }
 
-// 7
+
+// Завдання 7
 // Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
 // мінімальне і максимальне число відповідно.
 // Напишіть цикл всередині функції, який виводить у консоль
@@ -161,61 +139,64 @@
 // і поверніть її з функції.
 
 // function getNumbers(min, max) {
-//     if (min > max)
-//         return "Min cannot be more than max"
-
 //     let sum = 0;
-
-//     for (let i = max; i >= min; i--) {
-//         console.log(i);
+//     let i = max;
+//     while (i >= min) {
+//         console.log(i)
 //         if (i % 2 === 0) {
-//             sum += i;
+//            sum += i
 //         }
-      
+//         i = i - 1;
 //     }
-//     return (sum);
+//     return sum;
 // }
-// console.log(getNumbers(1, 10));
+// const result = getNumbers(2, 26)
+// console.log(result)
 
-// 8
+
+// Завдання 8
 // Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
 // Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
 // повертати з функції рядок - 'Not a number!'.
 
 // function min(a, b) {
-//     if (typeof a !== "number" || typeof b !== "number") {
-//         return 'Not a number!';
+//     let i = 0;
+//     if (typeof a !== `number` || typeof b !== `number`) {
+//         return 'Not a number!'
 //     }
-//     return Math.min(a, b);
+//     else if (a < b) {
+//         return a;
+//     }
+//     else {
+//         return b;
+//     }
+
 // }
-// //     if (a < b) {
-// //         return a;
-// //     }
-
-// //     return b;
-// // }
-// console.log(min(112, 1))
 
 
-// 9
+
+
+
+// Завдання 9
 // Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
 // якщо параметр age більше чи дорівнює 18.
 // В іншому випадку вона запитує підтвердження через confirm
 // і повертає його результат (true/false).
+
 
 // function isAdult(age) {
 //     if (age >= 18) {
 //         return true;
 //     }
 //     else {
-//         return confirm("Вам більше 18 років");
+//       return confirm()
 //     }
 // }
-// console.log(isAdult(11))
+// // console.log(isAdult(16));
+// console.log(isAdult(20));
 
 
-
-// 10 
+// Завдання 10
 // Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
 // Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
 // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
@@ -223,16 +204,20 @@
 
 
 // function fizzBuzz(num) {
-//     for (let i = 1; i <= num; i++) {
+//     let i = 1;
+
+//     while (i <= num) {
 //         if (i % 3 === 0 && i % 5 === 0) {
-//             console.log(i, "fizzbuzz");
-//         } else if (i % 3 === 0) {
-//             console.log(i, "fizz");
-//         } else if(i % 5 === 0) {
-//             console.log(i, "buzz");
+//         console.log('fizzbuzz');
+//     }
+//     else if (i % 3 === 0) {
+//         console.log('fizz');
+//     }
+//     else if (i % 5 === 0) {
+//         console.log('buzz');
 //         }
+//         i += 1
 //     }
 // }
 
-// fizzBuzz(25)
-
+// console.log(fizzBuzz(9));
